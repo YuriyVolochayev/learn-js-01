@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transactions</title>
+    <link rel="stylesheet" href="./css/newStyles.css" />
+  </head>
+  <body>
+    <h1 class="title">НАВЧАЄМОСЬ-ТРЕНУЄМОСЬ</h1>
+
+    <div class="hero"></div>
+
+    <button class="btn" id="magic-button" type="button">Magic Button</button>
+
+    <ul class="list">
+      <li class="list-item"><a class="list-link" href="/toto">TOTO</a></li>
+      <li class="list-item"><a class="list-link" href="/lala">LALA</a></li>
+      <li class="list-item"><a class="list-link" href="/pipi">PIPI</a></li>
+      <li class="list-item">
+        <a class="list-link" href="/trulala">TRULALA</a>
+      </li>
+    </ul>
+
+    <button class="btn" id="create" type="button" data-action="add">
+      create
+    </button>
+    <button class="btn" id="delete" type="button" data-action="remove">
+      delete
+    </button>
+    <button class="btn" id="edit" type="button" data-action="edit">edit</button>
+
+    <div class="color-picker"></div>
+
+    <h1 class="one-more-title">This is <span>another one title</span></h1>
+
+    <table class="transaction-table js-transaction-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Who</th>
+          <th>Transaction Type</th>
+          <th>Account Name</th>
+          <th>Account Number</th>
+        </tr>
+      </thead>
+    </table>
+
+    <script src="./07-transactions.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

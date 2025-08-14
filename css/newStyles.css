@@ -50,7 +50,7 @@ body {
   display: inline-block;
   width: 74px;
   height: 74px;
-  margin: 4px;
+  margin: 10px;
   border: none;
   outline: none;
   cursor: pointer;
@@ -69,4 +69,14 @@ body {
 .title__link {
   display: inline-flex;
   margin-left: 40px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: blueviolet;
+}
+.click-button {
+  margin-top: 50px;
+  margin-bottom: 20px;
 }

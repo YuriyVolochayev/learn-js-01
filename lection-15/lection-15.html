@@ -4,9 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Transactions</title>
-    <link rel="stylesheet" href="../css/lection-15.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/basicLightbox/5.0.0/basicLightbox.min.css"
+      integrity="sha512-C+KPK958JmUdU8B9SVr8YpEZtQ1T1XrFX/OLvE/lt336DFWXFHL5Y9/tUewMEU+Uy3dUAS363XXLdBine0WDyQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/lection-15.css" />
+    <link rel="stylesheet" href="./css/lrction-15-products.css" />
   </head>
   <body>
+    <p>СПЛИВАННЯ ПОДІЙ (event.target, event.currentTarget)</p>
+    <div id="parent" class="parent">
+      Parent
+      <div id="child" class="child">
+        Child
+        <div id="inner-child" class="inner-child">Inner-child</div>
+      </div>
+    </div>
+
+    <p>ДОДАВАННЯ ПРОСЛУХОВУВАЧА ПОДІЙ НА КОЖЕН ЕЛЕМЕНТ</p>
+
+    <div class="box-container">
+      <div class="box red" data-color="red"></div>
+      <div class="box green" data-color="green"></div>
+      <div class="box black" data-color="black"></div>
+    </div>
+
+    <div class="box-area">
+      <div class="box blue" data-color="blue"></div>
+      <div class="box brown" data-color="brown"></div>
+      <div class="box pink" data-color="pink"></div>
+    </div>
+
+    <p>ЗАДАЧА</p>
+
+    <ul class="products"></ul>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/basicLightbox/5.0.0/basicLightbox.min.js"
+      integrity="sha512-jIc3kBeyfyLXBTmzUIXnbGiVK2wgWGcDIkJwkFW4bQ6v2h/piOKLwIfy3wOmKHWIu8DgYSKVth0DMUvExMYcOw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="../lection-15/js/lection-15.js"></script>
     <script src="../main.js"></script>
   </body>

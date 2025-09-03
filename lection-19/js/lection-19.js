@@ -37,42 +37,60 @@
     
 // }, 2000, "Alice");
 
-// function maskify(cc) {
-//     let str = '';
-    
-//     for (var i = 0; i < cc.length - 4; i++) {
-//         str += "#";
-//     }
 
-//     return str+cc.slice(cc.length - 4,cc.length)
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=ІНТЕРВАЛИ=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+// setInterval(() => {
+//     console.log("interval");
+    
+// }, 1000);
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=ОЧИЩЕННЯ ІНТЕРВАЛІВ=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+// const logger = (name) => {
+//     console.log(`Helo ${name}` );
     
 // }
-// console.log(maskify(prompt()));
-    
-// function validatePIN (pin) {
-//   //return true or false
-//     for (let i = 0; i < pin.length; i++) {
-//     if(!pin[i].match(/[0-9]/)) {
-//       return false;
-//     } else {
-//       return true;
-//     }
-//   }
+// // за аналогією з setTimeout, setInterval в момент свого виклику повертає свій унікальний числовий ідентифікатор, який ми можемо зберегти в змінну
+// const intervalId = setInterval(logger, 1500, "Yura");// зміна приймає значення те що поверне метод під час свого виклику
+
+// // щоб очистити інтервал використовуються метод clearInterval
+
+// setTimeout(() => {
+//     clearInterval(intervalId);
+// }, 5000);
+
+//==-=-=-=-=-=-=-=-=-=-=-=-=-= ЗАДАЧА № 1 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+/**
+ * - ПОКАЗУЄМО ТА ХОВАЄМО, ДОДАЮЧИ / ВИДАЛЯЮЧИ КЛАС is-visible
+ * - ХОВАЄМО ЧЕРЕЗ ПЕВНИЙ ЧАС
+ * - ХОВАЄМО ПРИ КЛІЦІ
+ */
+
+// const NOTIFICATION_DELAY = 3000;
+
+// const notification = document.querySelector(".js-alert");
+// notification.addEventListener("click", handleClick);
+
+// let timerId = null;
+
+// showNotification();
+
+// function handleClick() {
+//     hideNotification();
+//     clearTimeout(timerId);
 // }
 
-// function longest(s1, s2) {
-//     const newStr = s1 + s2;
-    
-// const obj = {};
-  
-//   for(let i = 0; i < newStr.length; i++){
-//       obj[newStr[i]] = newStr[i];
-     
-      
-//   }
-//     //   return Object.values(obj).sort().join("");
-//     console.log(Object.values(obj).sort().join(""));
-    
+// function showNotification() {
+//     notification.classList.add("is-visible");
+
+//     timerId = setTimeout(() => {
+//         console.log("hide");
+//         hideNotification();
+//     }, NOTIFICATION_DELAY);
 // }
 
-// longest("aretheyhere", "yestheyarehere")
+// function hideNotification() {
+//     notification.classList.remove("is-visible");
+// }

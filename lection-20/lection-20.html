@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transactions</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/basicLightbox/5.0.0/basicLightbox.min.css"
+      integrity="sha512-C+KPK958JmUdU8B9SVr8YpEZtQ1T1XrFX/OLvE/lt336DFWXFHL5Y9/tUewMEU+Uy3dUAS363XXLdBine0WDyQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../lection-20/css/lection-20.css" />
+  </head>
+  <body>
+    <main>
+      <div>
+        <h1>ПРОМІСИ</h1>
+        <p class="text">
+          <span class="part-text">Проміс</span> - це спецефічний об'єкт, який
+          показує поточний стан асинхронної операції
+        </p>
+
+        <p class="text">
+          Коли проміс приймає в себе як аргумент функцію, функція приямає в себе
+          два параментри - методи <span class="part-text">resolve</span> та
+          <span class="part-text">reject</span>, які керують станами проміса
+        </p>
+
+        <h2>СТАНИ ПРОМІСІВ</h2>
+        <p>
+          Проміс може бути у трьох станах:
+          <span class="part-text">Pending</span> - єтап очікування, коли проміс
+          ще не виконався; <span class="part-text">Fullfilled</span> - проміс
+          виконався успішно; <span class="part-text">Rejected</span> - проміс
+          виконався з помилкою;
+        </p>
+
+        <p>
+          <span class="part-text">then</span> - обробляяє успішне завершення
+          промісу
+        </p>
+        <p>
+          <span class="part-text">catch</span> - обробляє завершення промісу з
+          помилкою
+        </p>
+        <p>
+          <span class="part-text">finaly</span> - існує для того, щоб
+          відпрацювати в будь-якому випадку незалежно від результату проміса
+        </p>
+
+        <p>
+          Всі методи приймають в себе колбек функцію. При обробці проміса
+          спочаку прописуються всі <span class="part-text">then</span>, потім
+          <span class="part-text">catch</span> і останнім, при необхідності
+          <span class="part-text">finaly</span>
+        </p>
+
+        <h2>ЛАНЦЮЖКИ ПРОМІСІВ</h2>
+        <p>
+          Інколи виникає необхість повертати щось з блоку
+          <span class="part-text">then</span>. Оскільки колбек функція нашого
+          <span class="part-text">then</span> повертає проміс ми знову
+          обробляємо його за допомогою все ж того
+          <span class="part-text">then</span>. Так з'являються
+          <span class="part-text">ланцюжки промісів</span>.
+          
+          <p><span class="part-text">ВАЖЛИВО!</span> Після віх блоків
+          <span class="part-text">then</span> треба написати блок
+          <span class="part-text">catch</span> для того, щоб відловити помилку.</p>
+        </p>
+      </div>
+      <div>
+        <h1>ПРОМІСИФІКАЦІЯ</h1>
+
+        <h2>Методи промісів:
+            <h3><span class="part-text">Promise.all(iterable)</span></h3>
+            <p>Приймає масив (або будь-який ітерабельний об’єкт) промісів.</p>
+            <p>Виконується, коли всі проміси успішно завершилися.</p>
+            <p>Якщо хоч один відхилений — результат теж буде відхилений.</p>
+            <p>✅ Використовується для паралельного запуску кількох асинхронних задач, які мають виконатися всі разом.</p>
+            
+            <h3><span class="part-text">Promise.allSettled(iterable)</span></h3>
+            <p>Повертає масив результатів усіх промісів, незалежно від того, чи вони fulfilled, чи rejected.</p>
+            <p>Кожен елемент результату — це об’єкт { status: "fulfilled"|"rejected", value|reason }.</p>
+            <p>✅ Зручно, коли треба дочекатися всіх результатів, але не критично, якщо деякі впадуть</p>
+            
+            
+            <h3><span class="part-text">Promise.race(iterable)</span></h3>
+            <p>Виконується тоді, коли перший проміс завершився (успішно чи з помилкою).</p>
+            <p>✅ Використовується, коли важливий найшвидший результат (наприклад, кілька запитів до різних серверів).</p>
+            
+            
+            <h3><span class="part-text">Promise.any(iterable)</span></h3>
+            <p>Виконується, коли перший успішний проміс завершився.</p>
+            <p>Якщо всі проміси відхиляються — повертає помилку AggregateError</p>
+            <p>✅ Корисно, коли достатньо хоча б одного успішного результату.</p>
+            
+            
+            <h3><span class="part-text">Promise.resolve(value)</span></h3>
+            <p>Повертає проміс, який відразу переходить у fulfilled із заданим значенням.</p>
+            <p>✅ Використовується для приведення будь-якого значення до промісу.</p>
+            
+            
+            <h3><span class="part-text">Promise.reject(reason)</span></h3>
+            <p>Повертає проміс, який відразу переходить у rejected із заданою причиною.</p>
+            <p>✅ Використовується для симуляції помилок або створення проміса у відхиленому стані.</p>
+        </h2>
+    </div>
+
+    <div>
+         <button class="start-btn">Start game</button>
+    <div class="container">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <p class="result"></p>
+    </div>
+    </main>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/basicLightbox/5.0.0/basicLightbox.min.js"
+      integrity="sha512-jIc3kBeyfyLXBTmzUIXnbGiVK2wgWGcDIkJwkFW4bQ6v2h/piOKLwIfy3wOmKHWIu8DgYSKVth0DMUvExMYcOw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/lection-20/js/lection-20.js"></script>
+    <script src="/lection-20/js/game.js"></script>
+
+    <script src="../main.js"></script>
+  </body>
+</html>
